@@ -14,7 +14,7 @@ namespace Calculadora
 
         public static int Suma(int a, int b)
         {
-            return 0;
+            return a+b;
         }
         
     }
