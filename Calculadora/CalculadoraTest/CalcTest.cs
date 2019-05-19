@@ -216,5 +216,84 @@ namespace CalculadoraTest
                 Assert.AreEqual(0, resultadoCalculado);
             }
         }
+
+        [Test]
+        public void TestDivision()
+        {
+            //Arrange
+            float a = 4;
+            float b = 2;
+            float resultadoEsperado = 2;
+            float resultadoCalculado = 0;
+
+            //Act
+            resultadoCalculado = Calculadora.Calc.Divide(a, b);
+
+            //Assert
+            Assert.AreEqual(resultadoEsperado, resultadoCalculado);
+        }
+
+        [Test]
+        public void TestDivision2()
+        {
+            //Arrange
+            float a = 2;
+            float b = 4;
+            float resultadoCalculado = 0;
+
+            //Act
+            resultadoCalculado = Calculadora.Calc.Divide(a, b);
+
+            //Assert
+            if (b > a)
+            {
+                Assert.Less(0, resultadoCalculado);
+                Assert.Greater(1, resultadoCalculado);
+            }
+            
+        }
+
+        [Test]
+        public void TestDivisionNoConmutativa()
+        {
+            //Arrange
+            float a = 4;
+            float b = 2;
+            float resultadoCalculado1 = 0;
+            float resultadoCalculado2 = 0;
+
+            //Act
+            resultadoCalculado1 = Calculadora.Calc.Divide(a, b);
+            resultadoCalculado2 = Calculadora.Calc.Divide(b, a);
+
+            //Assert
+            if (a != b)
+            {
+                Assert.AreNotEqual(resultadoCalculado1, resultadoCalculado2);
+            }
+            else
+            {
+                Assert.AreEqual(resultadoCalculado1, resultadoCalculado2);
+            }
+        }
+
+        [Test]
+        public void TestDivisionPorCero()
+        {
+            //Arrange
+            float a = 4;
+            float b = 0;
+            float resultadoEsperado = -1;
+            float resultadoCalculado = 0;
+
+            //Act
+            resultadoCalculado = Calculadora.Calc.Divide(a, b);
+
+            //Assert
+            if (b == 0)
+            {
+                Assert.AreEqual(-1, resultadoCalculado);
+            }
+        }
     }
 }

@@ -24,7 +24,12 @@ namespace Calculadora
 
         public static int Multiplicacion(int a, int b)
         {
-            return -99999;
+            return a * b;
+        }
+
+        public static float Divide(float a, float b)
+        {
+            return -1;
         }
 
     }
