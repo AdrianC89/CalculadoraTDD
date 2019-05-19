@@ -295,5 +295,41 @@ namespace CalculadoraTest
                 Assert.AreEqual(-1, resultadoCalculado);
             }
         }
+
+        [Test]
+        public void TestRaizCuadrada()
+        {
+            //Arrange
+            float valor = 120;
+            float resultadoEsperado = 10.9544511F;
+            float resultadoCalculado;
+
+            //Act
+            resultadoCalculado = Calculadora.Calc.Sqrt(valor);
+
+            //Assert
+            if (valor == 0)
+            {
+                Assert.AreEqual(0, resultadoCalculado);
+            }
+            else
+            {
+                if (valor == 1)
+                {
+                    Assert.AreEqual(0, resultadoCalculado);
+                }
+                else
+                {
+                    float diferencia = resultadoEsperado - resultadoCalculado;
+                    if (diferencia < 0)
+                    {
+                        diferencia *= -1;
+                    }
+                    Assert.LessOrEqual(diferencia, 0.00001F);
+                }
+            }
+
+        }
+
     }
 }

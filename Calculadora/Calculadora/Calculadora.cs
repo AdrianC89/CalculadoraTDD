@@ -36,5 +36,9 @@ namespace Calculadora
             return a/b;
         }
 
+        public static float Sqrt(float valor)
+        {
+            return 0;
+        }
     }
 }
