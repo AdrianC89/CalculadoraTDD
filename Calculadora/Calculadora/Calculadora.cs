@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace Calculadora
 {
-    class Calculadora
+    public class Calc
     {
         static void Main(string[] args)
         {
         }
+
+        public static int Suma(int a, int b)
+        {
+            return 0;
+        }
+        
     }
 }
