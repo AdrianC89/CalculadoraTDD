@@ -22,5 +22,10 @@ namespace Calculadora
             return a-b;
         }
 
+        public static int Multiplicacion(int a, int b)
+        {
+            return -99999;
+        }
+
     }
 }
