@@ -29,7 +29,11 @@ namespace Calculadora
 
         public static float Divide(float a, float b)
         {
-            return -1;
+            if (b == 0)
+            {
+                return -1;
+            } 
+            return a/b;
         }
 
     }
